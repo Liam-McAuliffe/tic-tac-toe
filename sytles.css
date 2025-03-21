@@ -1,3 +1,11 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    font-size: 30px;
+}
 .game-board {
     display: grid;
     grid-template-columns: repeat(3, 50px);
@@ -5,5 +13,19 @@
 }
 
 .game-square {
+    width: 50px;
+    height: 50px;
+    border: none;
+    padding: 0;
     border: solid black 1px;
+    background-color: white;
+}
+
+#textBox {
+    height: 59px;
+    width: 149px;
+    border: solid 1px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

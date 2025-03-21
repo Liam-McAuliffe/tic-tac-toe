@@ -9,18 +9,22 @@
     <body>
         <div class="game-container">
             <h1 class="title">Tic-Tac-Toe</h1>
-            <div class="game-board">
-                <div class="game-square" id="tl-square"></div>
-                <div class="game-square" id="tm-square"></div>
-                <div class="game-square" id="tr-square"></div>
-                <div class="game-square" id="ml-square"></div>
-                <div class="game-square" id="mm-square"></div>
-                <div class="game-square" id="mr-square"></div>
-                <div class="game-square" id="bl-square"></div>
-                <div class="game-square" id="bm-square"></div>
-                <div class="game-square" id="br-square"></div>
+            <div class="game-board" id="gameBoard">
+                <button class="game-square" id="0square"></button>
+                <button class="game-square" id="1square"></button>
+                <button class="game-square" id="2square"></button>
+                <button class="game-square" id="3square"></button>
+                <button class="game-square" id="4square"></button>
+                <button class="game-square" id="5square"></button>
+                <button class="game-square" id="6square"></button>
+                <button class="game-square" id="7square"></button>
+                <button class="game-square" id="8square"></button>
+            </div>
+            <div id="textBox">
+                <div id="dynamicText"></div>
             </div>
         </div>
-        <script src="index.js"></script>
+
+        <script type="module" src="src/index.js"></script>
     </body>
 </html>
