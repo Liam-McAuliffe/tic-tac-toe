@@ -3,8 +3,8 @@ import { Gameboard } from "./gameBoard.js";
 import { Render } from "./render.js";
 
 export const Gameflow = {
-    player1: Player.createNewPlayer("Player 1", "X"),
-    player2: Player.createNewPlayer("Player 2", "O"),
+    player1: new Player("Player 1", "X"),
+    player2: new Player("Player 2", "O"),
     currentPlayer: null,
 
     init: function () {

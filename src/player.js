@@ -1,8 +1,6 @@
-export const Player = {
-    createNewPlayer: function (name, marker) {
-        return {
-            name,
-            marker,
-        };
-    },
-};
+export class Player {
+    constructor(name, marker) {
+        this.name = name;
+        this.marker = marker;
+    }
+}
