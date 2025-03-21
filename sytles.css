@@ -29,3 +29,19 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.set-names {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px 0;
+}
+
+.player-name-input{
+    margin: 3px 0;
+}

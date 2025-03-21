@@ -7,19 +7,30 @@ export const Gameflow = {
     player2: Player.createNewPlayer("Player 2", "O"),
     currentPlayer: null,
 
-    startGame: function () {
-        this.updateTurn();
+    init: function () {
         Render.addEventListener();
+        this.currentPlayer = this.player1;
+    },
+
+    startGame: function () {
+        if (!Gameboard.board.every((square) => square === "")) return;
+
+        if (this.currentPlayer.marker === "O") {
+            this.updateTurn();
+        }
+        Render.getNewNames();
+        Render.updateText(this.player1.name + " goes first.");
     },
     makeMove: function (index) {
-        if (Gameboard.board[index] !== "") return;
+        if (Gameboard.board[index] !== "" || Render.text.innerHTML === "")
+            return;
 
         Gameboard.changeBoard(this.currentPlayer.marker, index);
         Render.updateBoard();
 
         if (this.checkWin()) {
-            Render.updateText(this.currentPlayer.name + " Won!");
             this.resetGame();
+            Render.updateText(this.currentPlayer.name + " Won!");
             return;
         }
 
@@ -36,7 +47,7 @@ export const Gameflow = {
             this.currentPlayer === this.player1
                 ? (this.currentPlayer = this.player2)
                 : this.player1;
-        Render.updateText(this.currentPlayer.marker + "'s turn");
+        Render.updateText(this.currentPlayer.name + "'s turn");
     },
     checkWin: function () {
         const winningCombos = [
@@ -67,5 +78,6 @@ export const Gameflow = {
         Gameboard.board = ["", "", "", "", "", "", "", "", ""];
         Render.updateBoard();
         this.currentPlayer = this.player1;
+        Render.updateText("");
     },
 };
